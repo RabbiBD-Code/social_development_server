@@ -5,7 +5,7 @@ import { MongoClient, ObjectId } from 'mongodb';
 import 'dotenv/config'
 
 const app = express()
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 
 
 app.use(cors())
@@ -162,6 +162,13 @@ app.delete("/manage-events/:id", verifyToken, async(req, res)=>{
     res.send(result)
 })
 
+app.get("/", (req, res)=>{
+  res.send({message: "server is running file!"})
+})
+
+
 app.listen(PORT, ()=>{
     console.log(`Server is running on port ${PORT}`);
 })
+
+export default app;
