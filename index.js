@@ -163,7 +163,7 @@ app.delete("/manage-events/:id", verifyToken, async(req, res)=>{
 })
 
 app.get("/", (req, res)=>{
-  res.send({message: "server is "})
+  res.send({message: "server is running file!"})
 })
 
 
